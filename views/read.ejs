@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>All Users</title>
+</head>
+<body class="bg-zinc-950 min-h-screen text-white p-10">
+
+    <nav class="mb-10 flex justify-between items-center">
+        <h1 class="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            All Users
+        </h1>
+        <a href="/" class="px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg hover:opacity-90 transition">
+            Back to Home
+        </a>
+    </nav>
+
+    <div class="Users grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+        <% Users.forEach((user)=>{ %>
+            <div class="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-5 shadow-xl hover:scale-[1.03] hover:shadow-purple-500/20 transition-all duration-300 group overflow-hidden">
+
+                <!-- Glow -->
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 opacity-0 group-hover:opacity-100 blur-2xl transition duration-500"></div>
+
+                <div class="relative z-10">
+                    <div class="h-44 w-full overflow-hidden rounded-xl mb-4">
+                        <img src="<%= user.image %>" class="w-full h-full object-cover rounded-xl border border-zinc-700">
+                    </div>
+
+                    <h3 class="text-xl font-semibold tracking-wide"><%= user.name %></h3>
+                    <p class="text-sm text-zinc-400 mb-4"><%= user.email %></p>
+
+                    <div class="flex gap-4 mt-4">
+                        <a href="/edit/<%= user._id %>" class="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 transition text-sm font-medium">Edit</a>
+                        <a href="/delete/<%= user._id %>" class="px-4 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 transition text-sm font-medium">Delete</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    
+    
+
+</body>
+</html>

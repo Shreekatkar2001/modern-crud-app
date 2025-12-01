@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Create User</title>
+</head>
+<body class="bg-zinc-950 text-white min-h-screen flex items-center justify-center p-6">
+
+    <div class="w-full max-w-2xl bg-zinc-900 border border-zinc-800 rounded-3xl shadow-2xl p-10 relative overflow-hidden">
+
+        <!-- Neon Accent -->
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 blur-3xl opacity-30"></div>
+
+        <div class="relative z-10">
+            <div class="text-center mb-10">
+                <h1 class="text-4xl font-extrabold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    Create User
+                </h1>
+                <p class="text-zinc-400 text-sm mt-2">Add a new user to your collection</p>
+            </div>
+
+            <div class="flex justify-center mb-8">
+                <a href="/read" class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 rounded-xl font-medium shadow-lg transition">
+                    View All Users
+                </a>
+            </div>
+
+            <form action="/create" method="post" class="space-y-6">
+                <div>
+                    <label class="text-sm text-zinc-300 mb-1 block">Full Name</label>
+                    <input type="text" name="Name" placeholder="John Doe"
+                        class="w-full py-3 px-4 bg-zinc-800 border border-zinc-700 rounded-xl outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" />
+                </div>
+
+                <div>
+                    <label class="text-sm text-zinc-300 mb-1 block">Email</label>
+                    <input type="email" name="Email" placeholder="example@mail.com"
+                        class="w-full py-3 px-4 bg-zinc-800 border border-zinc-700 rounded-xl outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition" />
+                </div>
+
+                <div>
+                    <label class="text-sm text-zinc-300 mb-1 block">Profile Image URL</label>
+                    <input type="text" name="Image" placeholder="https://image-link.com"
+                        class="w-full py-3 px-4 bg-zinc-800 border border-zinc-700 rounded-xl outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition" />
+                </div>
+
+                <button
+                    class="w-full py-3 mt-2 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold shadow-lg hover:opacity-90 transition text-lg">
+                    Create User
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

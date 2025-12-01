@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Edit User</title>
+</head>
+<body class="bg-gradient-to-br from-[#0a0a0f] via-[#0f0f1a] to-black min-h-screen text-white p-10">
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between mb-12">
+        <h1 class="text-5xl font-extrabold bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-500 bg-clip-text text-transparent tracking-wide drop-shadow-[0_0_25px_rgba(80,80,255,0.4)]">
+            Edit User
+        </h1>
+        <a href="/read" class="px-6 py-3 rounded-full bg-gradient-to-r from-purple-700 to-blue-700 hover:from-purple-500 hover:to-blue-500 transition-all shadow-[0_0_20px_rgba(120,60,255,.5)] text-sm font-semibold">
+            Back
+        </a>
+    </nav>
+
+    <!-- Edit Form Card -->
+    <div class="max-w-2xl mx-auto backdrop-blur-2xl bg-white/10 border border-white/20 rounded-3xl p-10 shadow-[0_0_50px_rgba(255,255,255,0.06)]">
+
+        <form action="/update/<%= editUser._id %>" method="post" class="space-y-7">
+
+            <!-- Name Input -->
+            <div>
+                <label class="block mb-2 text-sm tracking-wide text-zinc-300">Full Name</label>
+                <input
+                    type="text"
+                    name="Name"
+                    value="<%= editUser.name %>"
+                    class="w-full px-5 py-3 rounded-xl bg-zinc-900/70 border border-zinc-700 focus:border-blue-500 outline-none transition shadow-inner shadow-black/40"
+                />
+            </div>
+
+            <!-- Email Input -->
+            <div>
+                <label class="block mb-2 text-sm tracking-wide text-zinc-300">Email</label>
+                <input
+                    type="email"
+                    name="Email"
+                    value="<%= editUser.email %>"
+                    class="w-full px-5 py-3 rounded-xl bg-zinc-900/70 border border-zinc-700 focus:border-purple-500 outline-none transition shadow-inner shadow-black/40"
+                />
+            </div>
+
+            <!-- Image URL Input -->
+            <div>
+                <label class="block mb-2 text-sm tracking-wide text-zinc-300">Image URL</label>
+                <input
+                    type="text"
+                    name="Image"
+                    value="<%= editUser.image %>"
+                    class="w-full px-5 py-3 rounded-xl bg-zinc-900/70 border border-zinc-700 focus:border-cyan-500 outline-none transition shadow-inner shadow-black/40"
+                />
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-4">
+                <button
+                    type="submit"
+                    class="w-full py-3.5 rounded-xl font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 transition-all shadow-[0_0_25px_rgba(255,180,70,.5)] text-black">
+                    Update User
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
